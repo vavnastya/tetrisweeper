@@ -3,7 +3,7 @@ import 'package:tetrisweeper/leaderboard_page.dart';
 
 enum ButtonContent {icon, text}
 
-class GameButton extends StatelessWidget {
+class GameButton extends StatefulWidget {
   final String text;
   final Color color;
   final Size size;
@@ -19,16 +19,20 @@ class GameButton extends StatelessWidget {
   });
 
   @override
+  State<GameButton> createState() => _GameButtonState();
+}
+
+class _GameButtonState extends State<GameButton> {
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: 
-        func, 
+        widget.func, 
       style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          fixedSize: Size(size.width, size.height),
+          backgroundColor: widget.color,
+          fixedSize: Size(widget.size.width, widget.size.height),
           /*padding: EdgeInsets.all(padding),*/
         ),
-      child: Text(text));
+      child: Text(widget.text));
   }
-
 }

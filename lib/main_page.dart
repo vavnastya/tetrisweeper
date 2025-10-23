@@ -3,11 +3,23 @@ import 'package:tetrisweeper/button.dart';
 import 'package:tetrisweeper/general_layout.dart';
 import 'package:tetrisweeper/leaderboard_page.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({
     super.key,
   });
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _counter = 0;
+  
+  void _counterAdd() {
+    setState(() {
+      _counter++;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,13 +50,21 @@ class MainPage extends StatelessWidget {
               color: Color.fromARGB(255, 230, 190, 137), 
               size: Size(80, 80),),
             GameButton(
+              func: () {
+                _counterAdd();
+              },
+              text: '+', 
+              color: Color.fromARGB(255, 230, 190, 137), 
+              size: Size(80, 80),),
+            GameButton(
               func: ()=>
                 print('Pressed!'),
               text: 'Настройки', 
               color: Color.fromARGB(255, 230, 190, 137), 
               size: Size(80, 80),),
           ],
-        )
+        ),
+        Text('Кол-во нажатий: $_counter'),
       ],
     );
   }
