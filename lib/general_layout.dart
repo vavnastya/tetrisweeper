@@ -10,11 +10,8 @@ class GeneralLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
-          child: section,
-        )
+      body: SafeArea(
+        child: section,
       ),
     );
   }
