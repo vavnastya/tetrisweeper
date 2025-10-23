@@ -8,14 +8,12 @@ class GameButton extends StatefulWidget {
   final Color color;
   final Size size;
   final VoidCallback func;
-  /*final double padding;*/
   const GameButton({
     super.key,
     required this.text,
     required this.color,
     required this.size,
     required this.func,
-    /*required this.padding,*/
   });
 
   @override
@@ -31,7 +29,6 @@ class _GameButtonState extends State<GameButton> {
       style: ElevatedButton.styleFrom(
           backgroundColor: widget.color,
           fixedSize: Size(widget.size.width, widget.size.height),
-          /*padding: EdgeInsets.all(padding),*/
         ),
       child: Text(widget.text));
   }

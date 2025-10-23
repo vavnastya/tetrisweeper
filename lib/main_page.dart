@@ -20,10 +20,12 @@ class _MainPageState extends State<MainPage> {
       _counter++;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 400,),
         GameButton(
           func: ()=>
             print('Pressed!'),
@@ -31,6 +33,7 @@ class _MainPageState extends State<MainPage> {
           color: Color.fromARGB(255, 137, 230, 168), 
           size: Size(200, 80), 
         ),
+        SizedBox(height: 15,),
         GameButton(
           func: ()=>
             Navigator.push(
@@ -41,7 +44,9 @@ class _MainPageState extends State<MainPage> {
           text: 'Таблица лидеров', 
           color: Color.fromARGB(255, 137, 227, 230), 
           size: Size(200, 80),),
+          SizedBox(height: 40,),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GameButton(
               func: ()=>
@@ -49,6 +54,7 @@ class _MainPageState extends State<MainPage> {
               text: 'Аккаунт', 
               color: Color.fromARGB(255, 230, 190, 137), 
               size: Size(80, 80),),
+            SizedBox(width: 30,),
             GameButton(
               func: () {
                 _counterAdd();
@@ -56,6 +62,7 @@ class _MainPageState extends State<MainPage> {
               text: '+', 
               color: Color.fromARGB(255, 230, 190, 137), 
               size: Size(80, 80),),
+            SizedBox(width: 30,),
             GameButton(
               func: ()=>
                 print('Pressed!'),
@@ -64,6 +71,7 @@ class _MainPageState extends State<MainPage> {
               size: Size(80, 80),),
           ],
         ),
+        SizedBox(height: 15,),
         Text('Кол-во нажатий: $_counter'),
       ],
     );
