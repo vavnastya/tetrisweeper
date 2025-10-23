@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 enum ButtonContent {icon, text}
 
 class GameButton extends StatelessWidget {
-  final Widget content;
+  final String text;
   final Color color;
   final Size size;
   /*final double padding;*/
   const GameButton({
     super.key,
-    required this.content,
+    required this.text,
     required this.color,
     required this.size,
     /*required this.padding,*/
@@ -27,6 +27,6 @@ class GameButton extends StatelessWidget {
             /*padding: EdgeInsets.all(padding),*/
 
         ),
-        child: content);
+        child: Text(text));
   }
 }
